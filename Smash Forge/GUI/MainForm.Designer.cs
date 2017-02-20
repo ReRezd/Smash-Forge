@@ -82,6 +82,7 @@
             this.allStandardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movesetModdingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stageWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cleanViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,7 +92,7 @@
             this.glControl1 = new OpenTK.GLControl();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.stageWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMeshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -199,7 +200,8 @@
             this.addToolStripMenuItem,
             this.deleteLVDEntryToolStripMenuItem,
             this.mergeModelsMeshListToolStripMenuItem,
-            this.mergeBonesBoneListToolStripMenuItem});
+            this.mergeBonesBoneListToolStripMenuItem,
+            this.deleteMeshToolStripMenuItem});
             this.edittToolStripMenuItem.Name = "edittToolStripMenuItem";
             this.edittToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.edittToolStripMenuItem.Text = "Edit";
@@ -515,6 +517,14 @@
             this.movesetModdingToolStripMenuItem.Text = "Moveset Modding";
             this.movesetModdingToolStripMenuItem.Click += new System.EventHandler(this.movesetModdingPreset);
             // 
+            // stageWorkToolStripMenuItem
+            // 
+            this.stageWorkToolStripMenuItem.Name = "stageWorkToolStripMenuItem";
+            this.stageWorkToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.stageWorkToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.stageWorkToolStripMenuItem.Text = "Stage Work";
+            this.stageWorkToolStripMenuItem.Click += new System.EventHandler(this.stageWorkPreset);
+            // 
             // cleanViewToolStripMenuItem
             // 
             this.cleanViewToolStripMenuItem.Name = "cleanViewToolStripMenuItem";
@@ -598,13 +608,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // stageWorkToolStripMenuItem
+            // deleteMeshToolStripMenuItem
             // 
-            this.stageWorkToolStripMenuItem.Name = "stageWorkToolStripMenuItem";
-            this.stageWorkToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.stageWorkToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.stageWorkToolStripMenuItem.Text = "Stage Work";
-            this.stageWorkToolStripMenuItem.Click += new System.EventHandler(this.stageWorkPreset);
+            this.deleteMeshToolStripMenuItem.Name = "deleteMeshToolStripMenuItem";
+            this.deleteMeshToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.deleteMeshToolStripMenuItem.Text = "Delete Mesh";
+            this.deleteMeshToolStripMenuItem.Click += new System.EventHandler(this.deleteMeshToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -701,6 +710,7 @@
         private System.Windows.Forms.ToolStripMenuItem movesetModdingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cleanViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stageWorkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteMeshToolStripMenuItem;
     }
 }
 

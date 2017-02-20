@@ -341,5 +341,26 @@ namespace Smash_Forge
                 polySelected((NUD.Polygon) treeView1.SelectedNode, $"{treeView1.SelectedNode.Parent.Text} {treeView1.SelectedNode.Text}");
             }
         }
+
+        public void deleteMesh() //Deletes selected mesh 
+        {
+            if (treeView1.SelectedNode is NUD.Mesh)
+            {
+
+                TreeNode selectednode = treeView1.SelectedNode;
+                TreeNode parent = selectednode.Parent;
+                NUD.Mesh m = (NUD.Mesh)selectednode;
+                NUD nud = (NUD)parent.Tag;
+                nud.mesh.Remove(m);
+                treeView1.SelectedNode = selectednode;
+                nud.PreRender();
+                refresh();
+            }
+            else
+            {
+                MessageBox.Show("This can't be deleted");
+            }
+        }
+
     }
 }

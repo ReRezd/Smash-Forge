@@ -1453,5 +1453,10 @@ namespace Smash_Forge
             //RegenPanels();
             viewports[0].groupBox2.Visible = false;
         }
+
+        private void deleteMeshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            meshList.deleteMesh(); //Deletes selected mesh (IDK how useful this is to other people, but I needed it ¯\_(ツ)_/¯)
+        }
     }
 }
