@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenderSettings));
+            this.components = new System.ComponentModel.Container();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -49,9 +49,19 @@
             this.cb_normals = new System.Windows.Forms.CheckBox();
             this.renderMode = new System.Windows.Forms.ComboBox();
             this.cb_vertcolor = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.safemode = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Clearwrk = new System.Windows.Forms.CheckBox();
+            this.DeleteMesh = new System.Windows.Forms.CheckBox();
+            this.ClearAnims = new System.Windows.Forms.CheckBox();
+            this.ClearMoves = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthSlider)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -222,7 +232,7 @@
             this.panel1.Controls.Add(this.checkBox8);
             this.panel1.Controls.Add(this.checkBox6);
             this.panel1.Controls.Add(this.checkBox7);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 299);
             this.panel1.TabIndex = 12;
@@ -256,7 +266,7 @@
             this.groupBox1.Controls.Add(this.cb_vertcolor);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.depthSlider);
-            this.groupBox1.Location = new System.Drawing.Point(301, 12);
+            this.groupBox1.Location = new System.Drawing.Point(301, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(283, 299);
             this.groupBox1.TabIndex = 15;
@@ -314,22 +324,113 @@
             this.cb_vertcolor.Text = "Show Vertex Colors";
             this.cb_vertcolor.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(603, 326);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Render Settings";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ClearMoves);
+            this.groupBox3.Controls.Add(this.ClearAnims);
+            this.groupBox3.Controls.Add(this.DeleteMesh);
+            this.groupBox3.Controls.Add(this.Clearwrk);
+            this.groupBox3.Controls.Add(this.safemode);
+            this.groupBox3.Location = new System.Drawing.Point(621, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(275, 322);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "General Settings";
+            // 
+            // safemode
+            // 
+            this.safemode.AutoSize = true;
+            this.safemode.Cursor = System.Windows.Forms.Cursors.Default;
+            this.safemode.Location = new System.Drawing.Point(7, 26);
+            this.safemode.Name = "safemode";
+            this.safemode.Size = new System.Drawing.Size(77, 17);
+            this.safemode.TabIndex = 0;
+            this.safemode.Text = "Safe mode";
+            this.toolTip1.SetToolTip(this.safemode, "Safe Mode enables verification for every (possibly) harmful tool, this is to redu" +
+        "ce loss of work due to accidental clicks");
+            this.safemode.UseVisualStyleBackColor = true;
+            this.safemode.CheckedChanged += new System.EventHandler(this.safemode_CheckedChanged);
+            // 
+            // Clearwrk
+            // 
+            this.Clearwrk.AutoSize = true;
+            this.Clearwrk.Location = new System.Drawing.Point(26, 49);
+            this.Clearwrk.Name = "Clearwrk";
+            this.Clearwrk.Size = new System.Drawing.Size(108, 17);
+            this.Clearwrk.TabIndex = 1;
+            this.Clearwrk.Text = "Clear Workspace";
+            this.toolTip1.SetToolTip(this.Clearwrk, "Enables Safe Mode for the clear workspace button");
+            this.Clearwrk.UseVisualStyleBackColor = true;
+            this.Clearwrk.CheckedChanged += new System.EventHandler(this.Clearwrk_CheckedChanged);
+            // 
+            // DeleteMesh
+            // 
+            this.DeleteMesh.AutoSize = true;
+            this.DeleteMesh.Location = new System.Drawing.Point(26, 72);
+            this.DeleteMesh.Name = "DeleteMesh";
+            this.DeleteMesh.Size = new System.Drawing.Size(86, 17);
+            this.DeleteMesh.TabIndex = 2;
+            this.DeleteMesh.Text = "Delete Mesh";
+            this.toolTip1.SetToolTip(this.DeleteMesh, "Enables Safe Mode for the Delete mesh button");
+            this.DeleteMesh.UseVisualStyleBackColor = true;
+            this.DeleteMesh.CheckedChanged += new System.EventHandler(this.DeleteMesh_CheckedChanged);
+            // 
+            // ClearAnims
+            // 
+            this.ClearAnims.AutoSize = true;
+            this.ClearAnims.Location = new System.Drawing.Point(26, 92);
+            this.ClearAnims.Name = "ClearAnims";
+            this.ClearAnims.Size = new System.Drawing.Size(104, 17);
+            this.ClearAnims.TabIndex = 3;
+            this.ClearAnims.Text = "Clear Animations";
+            this.toolTip1.SetToolTip(this.ClearAnims, "Enables Safe Mode for the Clear Animations button");
+            this.ClearAnims.UseVisualStyleBackColor = true;
+            this.ClearAnims.CheckedChanged += new System.EventHandler(this.ClearAnims_CheckedChanged);
+            // 
+            // ClearMoves
+            // 
+            this.ClearMoves.AutoSize = true;
+            this.ClearMoves.Enabled = false;
+            this.ClearMoves.Location = new System.Drawing.Point(26, 115);
+            this.ClearMoves.Name = "ClearMoves";
+            this.ClearMoves.Size = new System.Drawing.Size(94, 17);
+            this.ClearMoves.TabIndex = 4;
+            this.ClearMoves.Text = "Clear Moveset";
+            this.toolTip1.SetToolTip(this.ClearMoves, "Enables Safe Mode for the Clear Moveset button");
+            this.ClearMoves.UseVisualStyleBackColor = true;
+            this.ClearMoves.CheckedChanged += new System.EventHandler(this.ClearMoves_CheckedChanged);
+            // 
             // RenderSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 324);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
-            this.Icon = Resources.Resources.forge2;
+            this.ClientSize = new System.Drawing.Size(908, 346);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Icon = global::Smash_Forge.Resources.Resources.forge2;
             this.Name = "RenderSettings";
-            this.Text = "Render Settings";
+            this.Text = "Settings";
             this.Load += new System.EventHandler(this.RenderSettings_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthSlider)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +457,13 @@
         private System.Windows.Forms.CheckBox cb_vertcolor;
         private System.Windows.Forms.CheckBox cb_normals;
         private System.Windows.Forms.CheckBox swagViewing;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.CheckBox safemode;
+        private System.Windows.Forms.CheckBox Clearwrk;
+        private System.Windows.Forms.CheckBox DeleteMesh;
+        private System.Windows.Forms.CheckBox ClearMoves;
+        private System.Windows.Forms.CheckBox ClearAnims;
     }
 }

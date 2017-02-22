@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Threading;
 using Microsoft.VisualBasic.Devices;
+using Smash_Forge.GUI;
 
 namespace Smash_Forge
 {
@@ -531,11 +532,26 @@ namespace Smash_Forge
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            animNode.Nodes.Clear();
-            mtaNode.Nodes.Clear();
-            Runtime.Animations.Clear();
-            Runtime.MaterialAnimations.Clear();
-            Runtime.TargetVBN.reset();
+            if (Properties.Settings.Default.ClearAnim == true) //checks if clear workspace is checked 
+            {
+                DialogResult result = MessageBox.Show("You are about to clear animations, would you like to continue", "Safe Mode", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    animNode.Nodes.Clear();
+                    mtaNode.Nodes.Clear();
+                    Runtime.Animations.Clear();
+                    Runtime.MaterialAnimations.Clear();
+                    Runtime.TargetVBN.reset();
+                }
+            }
+            else
+            {
+                animNode.Nodes.Clear();
+                mtaNode.Nodes.Clear();
+                Runtime.Animations.Clear();
+                Runtime.MaterialAnimations.Clear();
+                Runtime.TargetVBN.reset();
+            }
         }
 
         private void importToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -605,7 +621,21 @@ namespace Smash_Forge
 
         private void clearWorkspaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Runtime.killWorkspace = true;
+            
+            if (Properties.Settings.Default.ClearWrkCheck == true) //checks if clear workspace is checked 
+            {
+                DialogResult result = MessageBox.Show("You are about to clear your workspace, would you like to continue", "Safe Mode", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Runtime.killWorkspace = true;
+                }
+            }
+            else
+            {
+                Runtime.killWorkspace = true;
+
+            }
+
         }
 
         private void renderSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1455,8 +1485,9 @@ namespace Smash_Forge
         }
 
         private void deleteMeshToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            meshList.deleteMesh(); //Deletes selected mesh (IDK how useful this is to other people, but I needed it ¯\_(ツ)_/¯)
+        { 
         }
+
+        
     }
 }

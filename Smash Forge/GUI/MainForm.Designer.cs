@@ -92,7 +92,6 @@
             this.glControl1 = new OpenTK.GLControl();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deleteMeshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -200,8 +199,7 @@
             this.addToolStripMenuItem,
             this.deleteLVDEntryToolStripMenuItem,
             this.mergeModelsMeshListToolStripMenuItem,
-            this.mergeBonesBoneListToolStripMenuItem,
-            this.deleteMeshToolStripMenuItem});
+            this.mergeBonesBoneListToolStripMenuItem});
             this.edittToolStripMenuItem.Name = "edittToolStripMenuItem";
             this.edittToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.edittToolStripMenuItem.Text = "Edit";
@@ -537,7 +535,7 @@
             // 
             this.renderSettingsToolStripMenuItem.Name = "renderSettingsToolStripMenuItem";
             this.renderSettingsToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.renderSettingsToolStripMenuItem.Text = "Render Settings";
+            this.renderSettingsToolStripMenuItem.Text = "Settings";
             this.renderSettingsToolStripMenuItem.Click += new System.EventHandler(this.renderSettingsToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
@@ -607,13 +605,6 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // deleteMeshToolStripMenuItem
-            // 
-            this.deleteMeshToolStripMenuItem.Name = "deleteMeshToolStripMenuItem";
-            this.deleteMeshToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.deleteMeshToolStripMenuItem.Text = "Delete Mesh";
-            this.deleteMeshToolStripMenuItem.Click += new System.EventHandler(this.deleteMeshToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -710,7 +701,6 @@
         private System.Windows.Forms.ToolStripMenuItem movesetModdingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cleanViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stageWorkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteMeshToolStripMenuItem;
     }
 }
 
