@@ -22,5 +22,65 @@ namespace Smash_Forge.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SafeCheck {
+            get {
+                return ((bool)(this["SafeCheck"]));
+            }
+            set {
+                this["SafeCheck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ClearWrkCheck {
+            get {
+                return ((bool)(this["ClearWrkCheck"]));
+            }
+            set {
+                this["ClearWrkCheck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DltMesh {
+            get {
+                return ((bool)(this["DltMesh"]));
+            }
+            set {
+                this["DltMesh"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClearAnim {
+            get {
+                return ((bool)(this["ClearAnim"]));
+            }
+            set {
+                this["ClearAnim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClearMove {
+            get {
+                return ((bool)(this["ClearMove"]));
+            }
+            set {
+                this["ClearMove"] = value;
+            }
+        }
     }
 }

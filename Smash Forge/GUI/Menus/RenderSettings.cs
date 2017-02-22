@@ -73,7 +73,9 @@ namespace Smash_Forge.GUI
 
         private void RenderSettings_Load(object sender, EventArgs e)
         {
-
+            safemode.Checked = Properties.Settings.Default.SafeCheck;
+            DeleteMesh.Checked = Properties.Settings.Default.DltMesh;
+            Clearwrk.Checked = Properties.Settings.Default.ClearWrkCheck;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -95,6 +97,49 @@ namespace Smash_Forge.GUI
         private void swagViewing_CheckedChanged(object sender, EventArgs e)
         {
             Runtime.renderSwag = swagViewing.Checked;
+        }
+
+        private void safemode_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (DeleteMesh.Checked | Clearwrk.Checked | ClearAnims.Checked == false)
+            {
+                DeleteMesh.Checked = true;
+                Clearwrk.Checked = true;
+                //ClearMoves.Checked = true;
+                ClearAnims.Checked = true;
+                Properties.Settings.Default.SafeCheck = safemode.Checked;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.SafeCheck = safemode.Checked;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void Clearwrk_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ClearWrkCheck = Clearwrk.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void DeleteMesh_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DltMesh = DeleteMesh.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void ClearAnims_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ClearAnim = ClearAnims.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void ClearMoves_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ClearMove = ClearMoves.Checked;
+            Properties.Settings.Default.Save();
         }
     }
 }
