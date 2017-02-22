@@ -58,7 +58,6 @@
             this.deleteLVDEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeModelsMeshListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeBonesBoneListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteMeshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.animationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,8 +199,7 @@
             this.addToolStripMenuItem,
             this.deleteLVDEntryToolStripMenuItem,
             this.mergeModelsMeshListToolStripMenuItem,
-            this.mergeBonesBoneListToolStripMenuItem,
-            this.deleteMeshToolStripMenuItem});
+            this.mergeBonesBoneListToolStripMenuItem});
             this.edittToolStripMenuItem.Name = "edittToolStripMenuItem";
             this.edittToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.edittToolStripMenuItem.Text = "Edit";
@@ -329,13 +327,6 @@
             this.mergeBonesBoneListToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.mergeBonesBoneListToolStripMenuItem.Text = "Merge Bones (Bone List)";
             this.mergeBonesBoneListToolStripMenuItem.Click += new System.EventHandler(this.mergeBonesBoneListToolStripMenuItem_Click);
-            // 
-            // deleteMeshToolStripMenuItem
-            // 
-            this.deleteMeshToolStripMenuItem.Name = "deleteMeshToolStripMenuItem";
-            this.deleteMeshToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.deleteMeshToolStripMenuItem.Text = "Delete Mesh";
-            this.deleteMeshToolStripMenuItem.Click += new System.EventHandler(this.deleteMeshToolStripMenuItem_Click);
             // 
             // animationToolStripMenuItem
             // 
@@ -710,7 +701,6 @@
         private System.Windows.Forms.ToolStripMenuItem movesetModdingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cleanViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stageWorkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteMeshToolStripMenuItem;
     }
 }
 

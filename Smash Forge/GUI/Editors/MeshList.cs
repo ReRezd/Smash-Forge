@@ -344,23 +344,35 @@ namespace Smash_Forge
 
         public void deleteMesh() //Deletes selected mesh 
         {
-            if (treeView1.SelectedNode is NUD.Mesh)
+            if (Properties.Settings.Default.DltMesh == true) //checks if clear workspace is checked 
             {
+                if (treeView1.SelectedNode is NUD.Mesh)
+                {
 
-                TreeNode selectednode = treeView1.SelectedNode;
-                TreeNode parent = selectednode.Parent;
-                NUD.Mesh m = (NUD.Mesh)selectednode;
-                NUD nud = (NUD)parent.Tag;
-                nud.mesh.Remove(m);
-                treeView1.SelectedNode = selectednode;
-                nud.PreRender();
-                refresh();
-            }
-            else
-            {
-                MessageBox.Show("This can't be deleted");
+                    DialogResult result = MessageBox.Show("You are about to delete a mesh, would you like to continue", "Safe Mode", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                { 
+                        TreeNode selectednode = treeView1.SelectedNode;
+                        TreeNode parent = selectednode.Parent;
+                        NUD.Mesh m = (NUD.Mesh)selectednode;
+                        NUD nud = (NUD)parent.Tag;
+                        nud.mesh.Remove(m);
+                        treeView1.SelectedNode = selectednode;
+                        nud.PreRender();
+                        refresh();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("This can't be deleted");
+                }
             }
         }
 
+        private void deleteMeshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Deletes selected mesh (IDK how useful this is to other people, but I needed it ¯\_(ツ)_/¯)
+                deleteMesh();
+        }
     }
 }
